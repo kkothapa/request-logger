@@ -28,8 +28,8 @@ pipeline {
     success {
       withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
         sh "docker login -u ${USERNAME} -p ${PASSWORD}"
-        sh "docker push brainupgrade/request-logger:${env.BUILD_ID}"
-        sh "docker push brainupgrade/request-logger:latest"
+        sh "docker push bharadwajkvdk/request-logger:${env.BUILD_ID}"
+        sh "docker push bharadwajkvdk/request-logger:latest"
       }
     }
   }
